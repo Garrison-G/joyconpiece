@@ -2,7 +2,7 @@
 	"name" : "joyconpiece",
 	"version" : 1,
 	"creationdate" : 3633248311,
-	"modificationdate" : 3633249249,
+	"modificationdate" : 3633260991,
 	"viewrect" : [ 25.0, 47.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -26,6 +26,16 @@
 			}
 ,
 			"sandbox.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"joyconBridge.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"joyconGuiL_bridge.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
