@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 427.0, 773.0, 1270.0, 754.0 ],
+		"rect" : [ 544.0, 1043.0, 1270.0, 754.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -38,6 +38,118 @@
 		"style" : "Minimal",
 		"subpatcher_template" : "minimal",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-91",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 733.0, 124.5, 48.0, 21.0 ],
+					"text" : "r joystick"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-90",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 120.5, 332.0, 49.0, 21.0 ],
+					"text" : "s joystick"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-89",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 120.5, 291.0, 29.5, 21.0 ],
+					"text" : "join"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-88",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 733.0, 164.0, 103.0, 21.0 ],
+					"text" : "joycon.joystickParser"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-59",
+					"maxclass" : "number",
+					"minimum" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 817.0, 119.0, 50.0, 21.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_shortname" : "number",
+							"parameter_type" : 3,
+							"parameter_longname" : "number",
+							"parameter_initial_enable" : 1,
+							"parameter_invisible" : 1,
+							"parameter_initial" : [ 8 ]
+						}
+
+					}
+,
+					"varname" : "number"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-57",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 817.0, 206.0, 47.0, 21.0 ],
+					"text" : "slices $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 733.0, 206.0, 49.0, 21.0 ],
+					"text" : "select $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"embedstate" : [ [ "slices", 10 ] ],
+					"filename" : "inventorySelection.js",
+					"id" : "obj-2",
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 733.0, 291.0, 335.0, 335.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-36",
 					"linecount" : 3,
@@ -279,7 +391,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 64.0, 378.0, 124.0, 263.0 ],
+					"patching_rect" : [ 45.0, 395.0, 124.0, 263.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -367,6 +479,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
+					"order" : 0,
 					"source" : [ "obj-10", 0 ]
 				}
 
@@ -374,7 +487,24 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
+					"order" : 0,
 					"source" : [ "obj-10", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-89", 1 ],
+					"order" : 1,
+					"source" : [ "obj-10", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-89", 0 ],
+					"order" : 1,
+					"source" : [ "obj-10", 0 ]
 				}
 
 			}
@@ -396,6 +526,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-19", 0 ]
 				}
 
 			}
@@ -424,6 +561,29 @@
 				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
 					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-57", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-57", 0 ],
+					"order" : 1,
+					"source" : [ "obj-59", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-88", 1 ],
+					"order" : 0,
+					"source" : [ "obj-59", 0 ]
 				}
 
 			}
@@ -492,6 +652,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"source" : [ "obj-88", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-90", 0 ],
+					"source" : [ "obj-89", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
 					"source" : [ "obj-9", 2 ]
 				}
@@ -518,9 +692,38 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-88", 0 ],
+					"source" : [ "obj-91", 0 ]
+				}
+
+			}
  ],
+		"parameters" : 		{
+			"obj-59" : [ "number", "number", 0 ],
+			"parameterbanks" : 			{
+
+			}
+
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "joyconGuiL_bridge.maxpat",
+				"bootpath" : "~/Documents/GitHub/joyconpiece?fbclid=IwAR3ArBIeGmyKA78M_PVogsTk2oRrhBCwmjZG2P_OJGQ1EsCfXLF9yrBh_Ks/joyconpiece/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "inventorySelection.js",
+				"bootpath" : "~/Documents/GitHub/joyconpiece?fbclid=IwAR3ArBIeGmyKA78M_PVogsTk2oRrhBCwmjZG2P_OJGQ1EsCfXLF9yrBh_Ks/joyconpiece/code",
+				"patcherrelativepath" : "../code",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "joycon.joystickParser.maxpat",
 				"bootpath" : "~/Documents/GitHub/joyconpiece?fbclid=IwAR3ArBIeGmyKA78M_PVogsTk2oRrhBCwmjZG2P_OJGQ1EsCfXLF9yrBh_Ks/joyconpiece/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",

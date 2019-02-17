@@ -2,8 +2,8 @@
 	"name" : "joyconpiece",
 	"version" : 1,
 	"creationdate" : 3633248311,
-	"modificationdate" : 3633260991,
-	"viewrect" : [ 25.0, 47.0, 300.0, 500.0 ],
+	"modificationdate" : 3633267229,
+	"viewrect" : [ 543.0, 374.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -31,6 +31,11 @@
 			}
 ,
 			"joyconBridge.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"joycon.joystickParser.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}

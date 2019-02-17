@@ -5,6 +5,18 @@ simple 2d dial
 arguments: fgred fggreen fgblue bgred bggreen bgblue dialred dialgreen dialblue
 
 */
+declareattribute("slices","getattr_slices", "setattr_slices", 1);
+
+function getattr_slices(){
+     return slices;
+}
+
+function setattr_slices(){
+     slices = arguments[0];
+     refresh();
+}
+
+
 
 sketch.default2d();
 var val = 0;
@@ -17,7 +29,7 @@ var last_y = 0;
 	mgraphics.relative_coords = 1;
 	mgraphics.autofill = 0;
 	inventorySelect = -1;
-
+var slices = 8
 function paint(){
 
 
@@ -29,15 +41,17 @@ function paint(){
 	offColor = [0,0,0,0.1];
 	onColor = [1,1,0,0.5];
 
+	sliceSize = 3.14*2/slices;
+	sliceOffset = 3.14/slices*(slices/2-1);
 	
-	for (var i=0; i < 8; i++){
-		arc(0.0,0.0, rad, i*3.14/4+3.14/8*3, 3.14/4+i*3.14/4+3.14/8*3);
+	for (var i=0; i < slices; i++){
+		arc(0.0,0.0, rad, (i)*sliceSize+sliceOffset,(i+1)*sliceSize+sliceOffset);
 		line_to(0,0);
 		set_source_rgba(0, 0, 0, 1.);
 		close_path();
 		stroke();
 		set_source_rgba(0.2, 0.2, 0, 1.);
-		arc(0.0,0.0, rad, i*3.14/4+3.14/8*3, 3.14/4+i*3.14/4+3.14/8*3);
+		arc(0.0,0.0, rad, (i)*sliceSize+sliceOffset,(i+1)*sliceSize+sliceOffset);
 		line_to(0,0);
 		close_path();
 		if (i != inventorySelect){
