@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 584.0, 520.0, 1290.0, 1004.0 ],
+		"rect" : [ 793.0, 584.0, 1290.0, 1004.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -450,7 +450,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 56.0, 153.0, 216.0, 21.0 ],
+					"patching_rect" : [ 61.0, 114.0, 216.0, 21.0 ],
 					"text" : "joyconBridge",
 					"varname" : "joyconBridge"
 				}
@@ -547,7 +547,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "slices", 8 ], [ "accentColor", 0.5, 1, 0.5, 1 ] ],
+					"embedstate" : [ [ "slices", 6 ], [ "accentColor", 0.5, 1, 0.5, 1 ] ],
 					"filename" : "inventorySelection.js",
 					"id" : "obj-2",
 					"maxclass" : "jsui",
@@ -570,7 +570,7 @@
 					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "joyconGuiL_bridge.maxpat",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 56.0, 266.0, 124.0, 263.0 ],
@@ -588,6 +588,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-32", 1 ],
+					"order" : 0,
+					"source" : [ "obj-45", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-32", 0 ],
 					"source" : [ "obj-45", 0 ]
 				}
@@ -596,6 +604,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-47", 0 ],
+					"order" : 1,
 					"source" : [ "obj-45", 1 ]
 				}
 

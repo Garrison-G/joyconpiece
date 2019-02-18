@@ -94,7 +94,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 510.0, 408.0, 70.0, 21.0 ],
+					"patching_rect" : [ 510.0, 408.0, 72.0, 21.0 ],
 					"text" : "r #0_inPort"
 				}
 
@@ -137,7 +137,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 51.0, 10.0, 70.0, 21.0 ],
+					"patching_rect" : [ 51.0, 10.0, 72.0, 21.0 ],
 					"text" : "r #0_inPort"
 				}
 
@@ -270,7 +270,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 635.36669921875, 114.0, 67.0, 21.0 ],
+					"patching_rect" : [ 635.36669921875, 114.0, 69.0, 21.0 ],
 					"text" : "s #0_outIP"
 				}
 
@@ -292,7 +292,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 554.70001220703125, 182.0, 70.0, 21.0 ],
+					"patching_rect" : [ 554.70001220703125, 182.0, 72.0, 21.0 ],
 					"text" : "s #0_inPort"
 				}
 
@@ -303,7 +303,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 514.36669921875, 121.0, 91.0, 21.0 ],
+					"patching_rect" : [ 514.36669921875, 121.0, 93.0, 21.0 ],
 					"text" : "s #0_rumbleLen"
 				}
 
@@ -314,7 +314,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 474.033355712890625, 153.0, 96.0, 21.0 ],
+					"patching_rect" : [ 474.033355712890625, 153.0, 98.0, 21.0 ],
 					"text" : "s #0_rumbleFreq"
 				}
 
@@ -540,7 +540,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 51.0, 140.0, 40.0, 21.0 ],
+					"patching_rect" : [ 51.0, 141.0, 40.0, 21.0 ],
 					"text" : "unjoin"
 				}
 
