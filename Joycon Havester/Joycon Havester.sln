@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio for Mac
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joycon Havester", "Assembly-CSharp.csproj", "{ECC84A86-990B-806F-5DBF-31203A0D564D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joycon Havester", "Assembly-CSharp-Editor.csproj", "{6CB4EC66-0CBD-C073-D88A-9F0E2B159340}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECC84A86-990B-806F-5DBF-31203A0D564D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC84A86-990B-806F-5DBF-31203A0D564D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC84A86-990B-806F-5DBF-31203A0D564D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC84A86-990B-806F-5DBF-31203A0D564D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB4EC66-0CBD-C073-D88A-9F0E2B159340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB4EC66-0CBD-C073-D88A-9F0E2B159340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB4EC66-0CBD-C073-D88A-9F0E2B159340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB4EC66-0CBD-C073-D88A-9F0E2B159340}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

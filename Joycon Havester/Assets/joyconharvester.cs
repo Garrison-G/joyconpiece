@@ -8,7 +8,10 @@ using System.Text;
 
 public class joyconharvester : MonoBehaviour
 {
-
+    private int rumble = 0;
+    private int rumbleLen = 100;
+    private int rumbleFreqLow = 160;
+    private int rumbleFreqHigh = 320;
     private OSCServer myServer;
 
 
@@ -54,6 +57,8 @@ public class joyconharvester : MonoBehaviour
         }
     }
 
+    
+
     // Update is called once per frame
     void Update()
     {
@@ -92,9 +97,61 @@ public class joyconharvester : MonoBehaviour
         OSCHandler.Instance.SendMessageToClient("myClient", "/left/buttons/joystick", (j.GetButton(Joycon.Button.STICK) ? 1 : 0));
         OSCHandler.Instance.SendMessageToClient("myClient", "/left/buttons/side-top", (j.GetButton(Joycon.Button.SL) ? 1 : 0));
         OSCHandler.Instance.SendMessageToClient("myClient", "/left/buttons/side-bottom", (j.GetButton(Joycon.Button.SR) ? 1 : 0));
+        
+        if (rumble == 1)
+            {
+                j.SetRumble(rumbleFreqLow, rumbleFreqHigh, 0.6f, rumbleLen);
+                rumble = 0;
+            }
 
+
+        for (var i = 0; i < OSCHandler.Instance.packets.Count; i++)
+        {
+            // Process OSC
+            receivedOSC(OSCHandler.Instance.packets[i]);
+            // Remove them once they have been read.
+            OSCHandler.Instance.packets.Remove(OSCHandler.Instance.packets[i]);
+            i--;
+        }
+    }
+
+    
+
+    private void receivedOSC(OSCPacket pckt)
+    {
+        if (pckt == null) { return; }
+
+        int serverPort = pckt.server.ServerPort;
+
+        // Address
+        string address = pckt.Address.Substring(1);
+       
+        // Data at index 0
+        string data0 = pckt.Data.Count != 0 ? pckt.Data[0].ToString() : "null";
+        Debug.Log(address + " " + data0);
+
+        if (address == "rumble")
+        {
+            rumble = 1;
+        }
+
+        if (address == "rumble/length")
+        {
+            rumbleLen = System.Convert.ToInt32(data0);
+        }
+
+        if (address == "rumble/freqLow")
+        {
+            rumbleFreqLow = System.Convert.ToInt32(data0);
+        }
+
+        if (address == "rumble/freqHigh")
+        {
+            rumbleFreqHigh = System.Convert.ToInt32(data0);
+        }
 
     }
+
 
 }
 
