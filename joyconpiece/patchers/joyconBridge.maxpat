@@ -256,7 +256,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "slices", 5 ], [ "label", "scenes" ], [ "accentColor", 0.9, 0.9, 0, 1 ] ],
+					"embedstate" : [ [ "slices", 8 ], [ "accentColor", 0.9, 0.9, 0, 1 ] ],
 					"filename" : "inventorySelection.js",
 					"id" : "obj-2",
 					"maxclass" : "jsui",
@@ -264,7 +264,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 729.0, 300.0, 335.0, 335.0 ]
+					"patching_rect" : [ 729.0, 344.0, 240.0, 240.0 ]
 				}
 
 			}

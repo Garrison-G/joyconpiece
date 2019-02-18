@@ -28,17 +28,6 @@ function setattr_accentColor(){
      refresh();
 }
 
-declareattribute("label","getattr_label", "setattr_label", 1);
-
-
-function getattr_label(){
-     return label;
-}
-
-function setattr_label(){
-     label = arguments[0];
-     refresh();
-}
 
 sketch.default2d();
 var val = 0;
@@ -94,14 +83,6 @@ function paint(){
 		set_source_rgba(accentColor[0],accentColor[1],accentColor[2],accentColor[3]);
 		arc(0.0,0.0, rad*0.4, 0,6.28);
 		fill();
-		move_to((0-(rad*0.4)+0.05),0)
-		select_font_face("Abelton Sans Medium");
-		var fontsize = 12;
-		set_font_size(fontsize);
-		var textLength = text_measure(label);
-		text_path(label);
-		set_source_rgba(0, 0, 0, 1);
-		stroke();
 	
 	}
 	
