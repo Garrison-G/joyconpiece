@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 793.0, 584.0, 1290.0, 1004.0 ],
+		"rect" : [ 1356.0, 590.0, 1290.0, 1004.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -571,7 +571,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "slices", 8 ], [ "accentColor", 0.5, 1, 0.5, 1 ] ],
+					"embedstate" : [ [ "slices", 8 ], [ "accentColor", 0.9, 0.9, 0, 1 ] ],
 					"filename" : "inventorySelection.js",
 					"id" : "obj-2",
 					"maxclass" : "jsui",
