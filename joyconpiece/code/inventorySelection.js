@@ -16,7 +16,29 @@ function setattr_slices(){
      refresh();
 }
 
+declareattribute("accentColor","getattr_accentColor", "setattr_accentColor", 1);
 
+
+function getattr_accentColor(){
+     return accentColor;
+}
+
+function setattr_accentColor(){
+     accentColor = [arguments[0],arguments[1],arguments[2],arguments[3]];
+     refresh();
+}
+
+declareattribute("label","getattr_label", "setattr_label", 1);
+
+
+function getattr_label(){
+     return label;
+}
+
+function setattr_label(){
+     label = arguments[0];
+     refresh();
+}
 
 sketch.default2d();
 var val = 0;
@@ -29,7 +51,9 @@ var last_y = 0;
 	mgraphics.relative_coords = 1;
 	mgraphics.autofill = 0;
 	inventorySelect = -1;
-var slices = 8
+var slices = 8;
+var accentColor = [0.9, 0.9, 0,1];
+var label = "";
 function paint(){
 
 
@@ -39,7 +63,7 @@ function paint(){
 	//move_to(-0.5,0.5);
 	rad = 0.9;
 	offColor = [0,0,0,0.1];
-	onColor = [1,1,0,0.5];
+	onColor = accentColor;
 
 	sliceSize = 3.14*2/slices;
 	sliceOffset = 3.14/slices*(slices/2-1);
@@ -58,12 +82,26 @@ function paint(){
 		set_source_rgba(offColor[0],offColor[1],offColor[2], offColor[3]);
 		}
 		else{
-			set_source_rgba(onColor[0],onColor[1],onColor[2], onColor[3]);
+			set_source_rgba(onColor[0],onColor[1],onColor[2], 0.5);
 			}
 
 		fill();
+		
 	}
-	
+		arc(0.0,0.0, rad*0.4, 0,6.28);
+		set_source_rgba(0, 0, 0, 1.);
+		stroke();
+		set_source_rgba(accentColor[0],accentColor[1],accentColor[2],accentColor[3]);
+		arc(0.0,0.0, rad*0.4, 0,6.28);
+		fill();
+		move_to((0-(rad*0.4)+0.05),0)
+		select_font_face("Abelton Sans Medium");
+		var fontsize = 12;
+		set_font_size(fontsize);
+		var textLength = text_measure(label);
+		text_path(label);
+		set_source_rgba(0, 0, 0, 1);
+		stroke();
 	
 	}
 	
@@ -76,56 +114,12 @@ function select(select){
 	refresh();
 	}
 
-function bang()
-{
-
-	refresh();
-	outlet(0,val);
-}
-
-function msg_float(v)
-{
-	val = Math.min(Math.max(0,v),1);
-	notifyclients();
-	bang();
-}
-
-function set(v)
-{
-	val = Math.min(Math.max(0,v),1);
-	notifyclients();
-	refresh();
-}
-
 function fsaa(v)
 {
 	sketch.fsaa = v;
 	bang();
 }
 
-function frgb(r,g,b)
-{
-	vfrgb[0] = r/255.;
-	vfrgb[1] = g/255.;
-	vfrgb[2] = b/255.;
-	refresh();
-}
-
-function rgb2(r,g,b)
-{
-	vrgb2[0] = r/255.;
-	vrgb2[1] = g/255.;
-	vrgb2[2] = b/255.;
-	refresh();
-}
-
-function brgb(r,g,b)
-{
-	vbrgb[0] = r/255.;
-	vbrgb[1] = g/255.;
-	vbrgb[2] = b/255.;
-	refresh();
-}
 
 function setvalueof(v)
 {
@@ -137,49 +131,6 @@ function getvalueof()
 	return val;
 }
 
-// all mouse events are of the form: 
-// onevent <x>, <y>, <button down>, <cmd(PC ctrl)>, <shift>, <capslock>, <option>, <ctrl(PC rbutton)>
-// if you don't care about the additonal modifiers args, you can simply leave them out.
-// one potentially confusing thing is that mouse events are in absolute screen coordinates, 
-// with (0,0) as left top, and (width,height) as right, bottom, while ing 
-// coordinates are in relative world coordinates, with (0,0) as the center, +1 top, -1 bottom,
-// and x coordinates using a uniform scale based on the y coordinates. to convert between screen 
-// and world coordinates, use sketch.screentoworld(x,y) and sketch.worldtoscreen(x,y,z).
-
-function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
-{
-	// cache mouse position for tracking delta movements
-	last_x = x;
-	last_y = y;
-}
-onclick.local = 1; //private. could be left public to permit "synthetic" events
-
-function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
-{
-	var f,dy;
-	
-	// calculate delta movements
-	dy = y - last_y;
-	if (shift) { 
-		// fine tune if shift key is down
-		f = val - dy*0.001; 
-	} else {
-		f = val - dy*0.01;
-	}
-	msg_float(f); //set new value with clipping + refresh
-	// cache mouse position for tracking delta movements
-	last_x = x;
-	last_y = y;
-}
-ondrag.local = 1; //private. could be left public to permit "synthetic" events
-
-function ondblclick(x,y,but,cmd,shift,capslock,option,ctrl)
-{
-	last_x = x;
-	last_y = y;
-	msg_float(0); // reset dial?
-}
-ondblclick.local = 1; //private. could be left public to permit "synthetic" events
 
 function forcesize(w,h)
 {
