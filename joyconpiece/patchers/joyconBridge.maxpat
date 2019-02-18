@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1298.0, 522.0, 1290.0, 754.0 ],
+		"rect" : [ 250.0, 634.0, 1290.0, 754.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -38,6 +38,20 @@
 		"style" : "Minimal",
 		"subpatcher_template" : "minimal",
 		"boxes" : [ 			{
+				"box" : 				{
+					"autofit" : 1,
+					"forceaspect" : 1,
+					"id" : "obj-40",
+					"maxclass" : "fpic",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
+					"patching_rect" : [ 806.7154541015625, 424.0, 70.569084167480469, 70.569084167480469 ],
+					"pic" : "testIcon.png"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-38",
 					"maxclass" : "number",
@@ -256,7 +270,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "slices", 8 ], [ "accentColor", 0.9, 0.9, 0, 1 ] ],
+					"embedstate" : [ [ "slices", 8 ], [ "accentColor", 0.5, 1, 0.5, 1 ] ],
 					"filename" : "inventorySelection.js",
 					"id" : "obj-2",
 					"maxclass" : "jsui",
@@ -264,7 +278,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 729.0, 344.0, 240.0, 240.0 ]
+					"patching_rect" : [ 722.0, 338.0, 240.0, 240.0 ]
 				}
 
 			}
@@ -942,6 +956,13 @@
 				"bootpath" : "~/Documents/GitHub/joyconpiece?fbclid=IwAR3ArBIeGmyKA78M_PVogsTk2oRrhBCwmjZG2P_OJGQ1EsCfXLF9yrBh_Ks/joyconpiece/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "testIcon.png",
+				"bootpath" : "~/Documents",
+				"patcherrelativepath" : "../../../..",
+				"type" : "PNG",
 				"implicit" : 1
 			}
  ],

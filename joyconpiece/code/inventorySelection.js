@@ -50,7 +50,7 @@ function paint(){
 	with(mgraphics){
 	
 	//move_to(-0.5,0.5);
-	rad = 0.9;
+	rad = 0.99;
 	offColor = [0,0,0,0.1];
 	onColor = accentColor;
 

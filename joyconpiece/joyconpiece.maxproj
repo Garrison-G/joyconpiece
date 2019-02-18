@@ -2,7 +2,7 @@
 	"name" : "joyconpiece",
 	"version" : 1,
 	"creationdate" : 3633248311,
-	"modificationdate" : 3633267229,
+	"modificationdate" : 3633284035,
 	"viewrect" : [ 543.0, 374.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -35,14 +35,27 @@
 				"local" : 1
 			}
 ,
-			"joycon.joystickParser.maxpat" : 			{
+			"joyconGuiL_bridge.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
 ,
-			"joyconGuiL_bridge.maxpat" : 			{
+			"joycon.joystickParser.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
+			}
+
+		}
+,
+		"media" : 		{
+			"testIcon.png" : 			{
+				"kind" : "imagefile",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Documents",
+					"projectrelativepath" : "../../.."
+				}
+
 			}
 
 		}
