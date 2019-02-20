@@ -146,7 +146,7 @@ function paint(){
 	}
 		//Draw center circle
 		arc(0.0,0.0, rad*0.4, 0,6.28);
-		set_source_rgba(outlineColor[0], outlineColor[1], outlineColor[2], outlineColor[3]); //outine color
+		set_source_rgba(outlineColor[0], outlineColor[1], outlineColor[2], outlineColor[3]*interiorColor[3]); //outine color
 		stroke();
 		set_source_rgba(interiorColor[0],interiorColor[1],interiorColor[2],interiorColor[3]);
 		arc(0.0,0.0, rad*0.4, 0,6.28);

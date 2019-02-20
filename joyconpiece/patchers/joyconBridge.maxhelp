@@ -501,7 +501,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 443.7154541015625, 370.0, 70.569084167480469, 70.569084167480469 ],
+					"patching_rect" : [ 443.7154541015625, 368.7154541015625, 70.569084167480469, 70.569084167480469 ],
 					"pic" : "testIcon.png"
 				}
 
@@ -557,7 +557,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "accentColor", 0.9, 0.9, 0, 0.5 ], [ "spacer", 0 ], [ "offColor", 0, 0, 0, 0.1 ], [ "outlineColor", 0, 0, 0, 0.5 ], [ "lineWeight", 1 ], [ "interiorColor", 0.9, 0.9, 0, 1 ], [ "slices", 10 ] ],
+					"embedstate" : [ [ "accentColor", 0.9, 0.9, 0, 0.22 ], [ "spacer", 16 ], [ "offColor", 0, 0, 0, 0.1 ], [ "outlineColor", 0, 0, 0, 0.5 ], [ "lineWeight", 1 ], [ "interiorColor", 0.9, 0.9, 0, 1 ], [ "slices", 16 ] ],
 					"filename" : "inventorySelection.js",
 					"id" : "obj-2",
 					"maxclass" : "jsui",
