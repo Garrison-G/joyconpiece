@@ -37,7 +37,7 @@ var last_x = 0;
 var last_y = 0;
 var rad = 0.99; 
 var offColor = [0,0,0,0.1];
-var onColor = accentColor;
+
 
 
 var slices = 8;
@@ -53,7 +53,7 @@ var label = "";
 function paint(){
 	
 	with(mgraphics){	//enables mgraphics functinos without accessing the mgraphics object
-		
+	var onColor = accentColor;	
 
 	sliceSize = 3.14*2/slices;
 	sliceOffset = 3.14/slices*(slices/2-1);

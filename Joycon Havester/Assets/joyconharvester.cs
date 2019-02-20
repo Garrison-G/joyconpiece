@@ -60,7 +60,7 @@ public class joyconharvester : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Joycon j = joycons[jc_ind];
 
