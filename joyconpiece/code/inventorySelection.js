@@ -3,7 +3,7 @@
 radial selection menu well suited for jotstick based selection
 
 */
-declareattribute("slices","getattr_slices", "setattr_slices", 1);
+declareattribute("Slices","getattr_slices", "setattr_slices", 1);
 
 function getattr_slices(){
      return slices;
@@ -14,7 +14,7 @@ function setattr_slices(){
      refresh();
 }
 
-declareattribute("accentColor","getattr_accentColor", "setattr_accentColor", 1);
+declareattribute("AccentColor","getattr_accentColor", "setattr_accentColor", 1);
 
 
 function getattr_accentColor(){
@@ -27,7 +27,7 @@ function setattr_accentColor(){
 }
 
 
-declareattribute("spacer","getattr_spacer", "setattr_spacer", 1);
+declareattribute("Spacer","getattr_spacer", "setattr_spacer", 1);
 
 
 function getattr_spacer(){
@@ -39,7 +39,7 @@ function setattr_spacer(){
      refresh();
 }
 
-declareattribute("outlineColor","getattr_outlineColor", "setattr_outlineColor", 1);
+declareattribute("OutlineColor","getattr_outlineColor", "setattr_outlineColor", 1);
 
 
 function getattr_outlineColor(){
@@ -51,7 +51,7 @@ function setattr_outlineColor(){
      refresh();
 }
 
-declareattribute("lineWeight","getattr_lineWeight", "setattr_lineWeight", 1);
+declareattribute("LineWeight","getattr_lineWeight", "setattr_lineWeight", 1);
 
 
 function getattr_lineWeight(){
@@ -63,7 +63,7 @@ function setattr_lineWeight(){
      refresh();
 }
 
-declareattribute("interiorColor","getattr_interiorColor", "setattr_interiorColor", 1);
+declareattribute("InteriorColor","getattr_interiorColor", "setattr_interiorColor", 1);
 
 
 function getattr_interiorColor(){
@@ -75,7 +75,7 @@ function setattr_interiorColor(){
      refresh();
 }
 
-declareattribute("offColor","getattr_offColor", "setattr_offColor", 1);
+declareattribute("OffColor","getattr_offColor", "setattr_offColor", 1);
 
 
 function getattr_offColor(){
@@ -86,6 +86,19 @@ function setattr_offColor(){
      offColor = [arguments[0],arguments[1],arguments[2],arguments[3]];
      refresh();
 }
+
+declareattribute("InnerRadius","getattr_innerRad", "setattr_innerRad", 1);
+
+
+function getattr_innerRad(){
+     return innerRad;
+}
+
+function setattr_innerRad(){
+     innerRad = arguments[0];
+     refresh();
+}
+
 outlets = 1;
 //Variables
 var val = 0;
@@ -97,6 +110,7 @@ var last_y = 0;
 var rad = 0.99; 
 var offColor = [0,0,0,0.1];
 
+var innerRad = 0.4;
 var interiorColor = [0.9, 0.9, 0,1];
 var lineWeight = 1;
 var outlineColor = [0,0,0,0.5];
@@ -145,17 +159,17 @@ function paint(){
 		
 	}
 		//Draw center circle
-		arc(0.0,0.0, rad*0.4, 0,6.28);
+		arc(0.0,0.0, rad*innerRad, 0,6.28);
 		set_source_rgba(outlineColor[0], outlineColor[1], outlineColor[2], outlineColor[3]*interiorColor[3]); //outine color
 		stroke();
 		set_source_rgba(interiorColor[0],interiorColor[1],interiorColor[2],interiorColor[3]);
-		arc(0.0,0.0, rad*0.4, 0,6.28);
+		arc(0.0,0.0, rad*innerRad, 0,6.28);
 		
 		fill();
 	
 	}
 	outlet(0,["slices", slices]);
-	
+	outlet(0,["select", inventorySelect]);
 	
 	
 	}
