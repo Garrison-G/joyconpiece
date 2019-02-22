@@ -2,8 +2,8 @@
 	"name" : "joyconpiece",
 	"version" : 1,
 	"creationdate" : 3633248311,
-	"modificationdate" : 3633288585,
-	"viewrect" : [ 543.0, 374.0, 300.0, 500.0 ],
+	"modificationdate" : 3633628157,
+	"viewrect" : [ 234.0, 417.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -47,6 +47,11 @@
 ,
 			"joyconBridge.maxhelp" : 			{
 				"kind" : "helpfile",
+				"local" : 1
+			}
+,
+			"weka example.maxpat" : 			{
+				"kind" : "patcher",
 				"local" : 1
 			}
 

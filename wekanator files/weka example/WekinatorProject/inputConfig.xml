@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<OSCInputGroup>
+  <oscMessage>/wek/inputs</oscMessage>
+  <numInputs>6</numInputs>
+  <groupName>Inputs</groupName>
+  <inputNames>
+    <string>gyro x</string>
+    <string>gyro y</string>
+    <string>gyro z</string>
+    <string>accel x</string>
+    <string>accel y</string>
+    <string>accel z</string>
+  </inputNames>
+</OSCInputGroup>
