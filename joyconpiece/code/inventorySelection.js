@@ -111,7 +111,7 @@ var rad = 0.99;
 var offColor = [0,0,0,0.1];
 
 var innerRad = 0.4;
-var interiorColor = [0.9, 0.9, 0,1];
+var interiorColor = [0.9, 0.9, 0,0];
 var lineWeight = 1;
 var outlineColor = [0,0,0,0.5];
 var spacer = 0;
@@ -135,17 +135,33 @@ function paint(){
 	sliceOffset = 3.14/slices*(slices/2-1);
 	set_line_width(lineWeight*0.01);
 	for (var i=0; i < slices; i++){
-		arc(0.0,0.0, rad, (i)*sliceSize+sliceOffset+sliceSpacer,(i+1)*sliceSize+sliceOffset);  //draw arch
-		line_to(0,0); //draw line to center;
-		close_path(); //complete the path;
+		modStart = (i)*sliceSize+sliceOffset+sliceSpacer;
+		modEnd = (i+1)*sliceSize+sliceOffset;
+		
+	
+
+		arc(0.0,0.0, rad*innerRad, modStart , modEnd);
+		point = poltocar(rad, modEnd);
+		
+
+  		arc_negative(0.0,0.0, rad, modEnd , modStart);//draw arch		
+
+		
+		close_path();
+		
+		 //complete the path;
 		
 		set_source_rgba(outlineColor[0], outlineColor[1], outlineColor[2], outlineColor[3]); //outine color
 		stroke();// outline the shape
 		
 		//outlining the shape clears to path, so we must draw it again
 		
-		arc(0.0,0.0, rad, (i)*sliceSize+sliceOffset+sliceSpacer,(i+1)*sliceSize+sliceOffset);
-		line_to(0,0);
+
+		arc(0.0,0.0, rad*innerRad, modStart , modEnd);
+
+		
+  		arc_negative(0.0,0.0, rad, modEnd , modStart);//draw arch	
+	
 		close_path();
 		//If selected, choose  the on color
 		if (i != inventorySelect){
@@ -159,13 +175,16 @@ function paint(){
 		
 	}
 		//Draw center circle
-		arc(0.0,0.0, rad*innerRad, 0,6.28);
-		set_source_rgba(outlineColor[0], outlineColor[1], outlineColor[2], outlineColor[3]*interiorColor[3]); //outine color
-		stroke();
+
 		set_source_rgba(interiorColor[0],interiorColor[1],interiorColor[2],interiorColor[3]);
 		arc(0.0,0.0, rad*innerRad, 0,6.28);
-		
 		fill();
+		var innerAlpha
+		if (interiorColor[3] == 0) innerAlpha = 0;
+		else innerAlpha = 1;
+		set_source_rgba(outlineColor[0],outlineColor[1],outlineColor[2],outlineColor[3]*innerAlpha);
+		arc(0.0,0.0, rad*innerRad, 0,6.28);
+		stroke();
 	
 	}
 	outlet(0,["slices", slices]);
@@ -173,6 +192,24 @@ function paint(){
 	
 	
 	}
+
+
+function cartopol(x,y){
+	with (Math){
+		m = atan(y/x);
+		r = sqrt(pow(x,2)+pow(y,2));
+	}
+	return [r , m];
+	}
+	
+function poltocar(r,m){
+	with (Math){
+		x = r*cos(m)
+		y= r*sin(m)
+		}
+		return [x,y];
+		}
+	
 
 function select(select){
 	inventorySelect = select;
