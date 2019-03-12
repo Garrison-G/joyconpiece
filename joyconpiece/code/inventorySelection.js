@@ -99,6 +99,18 @@ function setattr_innerRad(){
      refresh();
 }
 
+declareattribute("modThresh","getattr_modThresh", "setattr_modThresh", 1);
+
+
+function getattr_modThresh(){
+     return modThresh;
+}
+
+function setattr_modThresh(){
+     modThresh = arguments[0];
+     refresh();
+}
+
 outlets = 1;
 //Variables
 var val = 0;
@@ -109,6 +121,8 @@ var last_x = 0;
 var last_y = 0;
 var rad = 0.99; 
 var offColor = [0,0,0,0.1];
+var selectionMod = 0;
+var modThresh = 0.05;
 
 var innerRad = 0.4;
 var interiorColor = [0.9, 0.9, 0,0];
@@ -118,6 +132,7 @@ var spacer = 0;
 var slices = 8;
 var accentColor = [0.9, 0.9, 0,0.5];
 var label = "";
+
 
 //mgraphic init
 	mgraphics.init();
@@ -168,10 +183,27 @@ function paint(){
 		set_source_rgba(offColor[0],offColor[1],offColor[2], offColor[3]);
 		}
 		else{
-			set_source_rgba(onColor[0],onColor[1],onColor[2], onColor[3]);
+			set_source_rgba(onColor[0],onColor[1],onColor[2], onColor[3]*0.25);
 			}
 
 		fill();
+		
+		if (i == inventorySelect){
+			
+		arc(0.0,0.0, rad*innerRad, modStart , modEnd);
+
+		
+  		arc_negative(0.0,0.0, (selectionMod*(rad-innerRad)+innerRad)*rad, modEnd , modStart);//draw arch
+
+
+		close_path();
+		set_source_rgba(onColor[0],onColor[1],onColor[2], onColor[3]);
+		
+		fill();
+
+	}
+				
+		
 		
 	}
 		//Draw center circle
@@ -188,7 +220,7 @@ function paint(){
 	
 	}
 	outlet(0,["slices", slices]);
-	outlet(0,["select", inventorySelect]);
+	outlet(0,["select", inventorySelect, selectionMod]);
 	
 	
 	}
@@ -196,8 +228,11 @@ function paint(){
 
 function cartopol(x,y){
 	with (Math){
-		m = atan(y/x);
-		r = sqrt(pow(x,2)+pow(y,2));
+		if ( x === void 0 ) x = 0;
+  		if ( y === void 0 ) y = 0;
+
+		m = atan2(y, x);
+		r = sqrt((x*x)+(y*y));
 	}
 	return [r , m];
 	}
@@ -215,6 +250,33 @@ function select(select){
 	inventorySelect = select;
 	refresh();
 	}
+	
+function joystick(xPos, yPos){
+	var polar = cartopol(xPos,yPos)
+	var mod = polar[0];
+	var phase = polar[1];
+	
+	if (mod > modThresh){
+	
+	var around = (phase/(Math.PI*2)+1.25)%1;
+	
+	var selection = Math.floor(around*slices)
+	
+	select(selection);
+	
+	selectionMod = Math.clamp(mod,0,1);
+	}
+	
+	else {
+		select (-1);
+		selectionMod = 0;
+		}
+	
+		
+	
+	}
+	
+	post(selectionMod, "\n");
 
 function fsaa(v)
 {
@@ -248,4 +310,6 @@ function onresize(w,h)
 	forcesize(w,h);
 	refresh();
 }
-onresize.local = 1; 
+onresize.local = 1;
+
+(function(){Math.clamp=function(a,b,c){return Math.max(b,Math.min(c,a));}})(); 
