@@ -46,7 +46,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 585.0, 643.5, 50.0, 20.0 ]
+					"patching_rect" : [ 585.0, 643.5, 50.0, 21.0 ]
 				}
 
 			}
@@ -59,7 +59,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 520.0, 643.5, 50.0, 20.0 ]
+					"patching_rect" : [ 520.0, 643.5, 50.0, 21.0 ]
 				}
 
 			}
@@ -70,7 +70,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
-					"patching_rect" : [ 520.0, 614.0, 52.0, 20.0 ],
+					"patching_rect" : [ 520.0, 614.0, 54.0, 21.0 ],
 					"text" : "unpack f f"
 				}
 
@@ -82,7 +82,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 520.0, 205.5, 69.0, 20.0 ],
+					"patching_rect" : [ 520.0, 205.5, 73.0, 21.0 ],
 					"text" : "joystick $1 $2"
 				}
 
@@ -105,7 +105,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 520.0, 579.0, 60.0, 20.0 ],
+					"patching_rect" : [ 520.0, 579.0, 60.0, 21.0 ],
 					"text" : "route select"
 				}
 
@@ -117,7 +117,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 286.0, 520.0, 43.0, 20.0 ],
+					"patching_rect" : [ 286.0, 520.0, 43.0, 21.0 ],
 					"text" : "qlim 33"
 				}
 
@@ -129,7 +129,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 198.0, 520.0, 43.0, 20.0 ],
+					"patching_rect" : [ 198.0, 520.0, 43.0, 21.0 ],
 					"text" : "qlim 33"
 				}
 
@@ -141,7 +141,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 618.0, 60.0, 20.0 ],
+					"patching_rect" : [ 98.0, 618.0, 60.0, 21.0 ],
 					"text" : "loadmess 1"
 				}
 
@@ -368,13 +368,16 @@
 						"styles" : [ 							{
 								"name" : "Minimal",
 								"default" : 								{
-									"elementcolor" : [ 0.694117647058824, 0.694117647058824, 0.694117647058824, 1.0 ],
 									"bgcolor" : [ 0.999999, 0.999974, 0.999991, 1.0 ],
-									"fontsize" : [ 10.0 ],
+									"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"fontname" : [ "Futura Medium" ],
+									"elementcolor" : [ 0.694117647058824, 0.694117647058824, 0.694117647058824, 1.0 ],
+									"fontface" : [ 0 ],
 									"clearcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 									"selectioncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"editing_bgcolor" : [ 0.956862745098039, 0.956862745098039, 0.956862745098039, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"fontname" : [ "Futura Medium" ],
 									"bgfillcolor" : 									{
 										"type" : "color",
 										"color" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
@@ -385,10 +388,7 @@
 										"autogradient" : 0.0
 									}
 ,
-									"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"editing_bgcolor" : [ 0.956862745098039, 0.956862745098039, 0.956862745098039, 1.0 ],
-									"fontface" : [ 0 ],
-									"accentcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"fontsize" : [ 10.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -397,7 +397,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 285.0, 553.0, 68.0, 20.0 ],
+					"patching_rect" : [ 285.0, 553.0, 68.0, 21.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -419,7 +419,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 197.0, 486.5, 36.0, 20.0 ],
+					"patching_rect" : [ 197.0, 486.5, 36.0, 21.0 ],
 					"text" : "r quat"
 				}
 
@@ -430,7 +430,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 258.0, 195.5, 36.0, 20.0 ],
+					"patching_rect" : [ 258.0, 195.5, 36.0, 21.0 ],
 					"text" : "s quat"
 				}
 
@@ -442,7 +442,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 197.0, 553.0, 70.0, 20.0 ],
+					"patching_rect" : [ 197.0, 553.0, 70.0, 21.0 ],
 					"text" : "prepend quat"
 				}
 
@@ -454,7 +454,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 286.0, 497.0, 36.0, 20.0 ],
+					"patching_rect" : [ 286.0, 497.0, 36.0, 21.0 ],
 					"text" : "r gyro"
 				}
 
@@ -465,7 +465,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 158.5, 191.0, 37.0, 20.0 ],
+					"patching_rect" : [ 158.5, 191.0, 37.0, 21.0 ],
 					"text" : "s gyro"
 				}
 
@@ -476,7 +476,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 203.75, 205.5, 41.0, 20.0 ],
+					"patching_rect" : [ 203.75, 205.5, 41.0, 21.0 ],
 					"text" : "s accel"
 				}
 
@@ -488,7 +488,7 @@
 					"numinlets" : 8,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 98.0, 592.0, 92.5, 20.0 ],
+					"patching_rect" : [ 98.0, 592.0, 92.5, 21.0 ],
 					"text" : "jit.gl.material"
 				}
 
@@ -500,7 +500,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 197.0, 592.0, 230.0, 20.0 ],
+					"patching_rect" : [ 197.0, 592.0, 230.0, 21.0 ],
 					"text" : "jit.gl.gridshape @scale 0.2 0.2 0.2 @shape cube"
 				}
 
@@ -524,7 +524,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "bang", "" ],
-					"patching_rect" : [ 98.0, 676.0, 178.0, 20.0 ],
+					"patching_rect" : [ 98.0, 676.0, 178.0, 21.0 ],
 					"text" : "jit.world @visible 0 @output_matrix 1"
 				}
 
@@ -535,7 +535,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 105.25, 195.5, 49.0, 20.0 ],
+					"patching_rect" : [ 105.25, 195.5, 49.0, 21.0 ],
 					"text" : "s joystick"
 				}
 
@@ -547,7 +547,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 61.0, 114.0, 216.0, 20.0 ],
+					"patching_rect" : [ 61.0, 114.0, 216.0, 21.0 ],
 					"text" : "joyconBridge",
 					"varname" : "joyconBridge"
 				}
@@ -560,7 +560,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 520.0, 174.5, 48.0, 20.0 ],
+					"patching_rect" : [ 520.0, 174.5, 48.0, 21.0 ],
 					"text" : "r joystick"
 				}
 
@@ -568,7 +568,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "InnerRadius", 0.486 ], [ "modThresh", 0.05 ], [ "OutlineColor", 0, 0, 0, 0.5 ], [ "LineWeight", 1 ], [ "Slices", 8 ], [ "InteriorColor", 0.9, 0.9, 0, 0 ], [ "AccentColor", 0.9, 0.9, 0, 0.5 ], [ "OffColor", 0, 0, 0, 0.1 ], [ "Spacer", 0 ] ],
+					"embedstate" : [ [ "InteriorColor", 0.9, 0.9, 0, 0 ], [ "AccentColor", 0.9, 0.9, 0, 0.5 ], [ "OffColor", 0, 0, 0, 0.1 ], [ "Spacer", 0 ], [ "InnerRadius", 0.4 ], [ "OutlineColor", 0, 0, 0, 0.5 ], [ "modThresh", 0.01 ], [ "LineWeight", 1 ], [ "Slices", 8 ] ],
 					"filename" : "inventorySelection.js",
 					"id" : "obj-2",
 					"maxclass" : "jsui",
@@ -608,7 +608,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 710.0, 191.0, 323.0, 20.0 ]
+					"patching_rect" : [ 710.0, 191.0, 323.0, 21.0 ]
 				}
 
 			}
@@ -621,7 +621,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 710.0, 121.0, 150.0, 20.0 ]
+					"patching_rect" : [ 710.0, 121.0, 150.0, 21.0 ]
 				}
 
 			}
@@ -634,7 +634,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 710.0, 217.0, 323.0, 20.0 ]
+					"patching_rect" : [ 710.0, 217.0, 323.0, 21.0 ]
 				}
 
 			}
@@ -647,7 +647,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 710.0, 242.0, 323.0, 20.0 ]
+					"patching_rect" : [ 710.0, 242.0, 323.0, 21.0 ]
 				}
 
 			}
@@ -660,7 +660,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 710.0, 161.0, 150.0, 20.0 ]
+					"patching_rect" : [ 710.0, 161.0, 150.0, 21.0 ]
 				}
 
 			}
@@ -673,7 +673,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 710.0, 269.0, 323.0, 20.0 ]
+					"patching_rect" : [ 710.0, 269.0, 323.0, 21.0 ]
 				}
 
 			}
@@ -686,7 +686,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 705.0, 98.0, 150.0, 20.0 ]
+					"patching_rect" : [ 705.0, 98.0, 150.0, 21.0 ]
 				}
 
 			}
@@ -699,7 +699,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 710.0, 298.0, 150.0, 20.0 ]
+					"patching_rect" : [ 710.0, 298.0, 150.0, 21.0 ]
 				}
 
 			}
@@ -919,21 +919,21 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "joyconGuiL_bridge.maxpat",
-				"bootpath" : "D:/Documents/GitHub/joyconpiece/joyconpiece/patchers",
+				"bootpath" : "~/Documents/GitHub/joyconpiece?fbclid=IwAR3ArBIeGmyKA78M_PVogsTk2oRrhBCwmjZG2P_OJGQ1EsCfXLF9yrBh_Ks/joyconpiece/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "inventorySelection.js",
-				"bootpath" : "D:/Documents/GitHub/joyconpiece/joyconpiece/code",
+				"bootpath" : "~/Documents/GitHub/joyconpiece?fbclid=IwAR3ArBIeGmyKA78M_PVogsTk2oRrhBCwmjZG2P_OJGQ1EsCfXLF9yrBh_Ks/joyconpiece/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "joyconBridge.maxpat",
-				"bootpath" : "D:/Documents/GitHub/joyconpiece/joyconpiece/patchers",
+				"bootpath" : "~/Documents/GitHub/joyconpiece?fbclid=IwAR3ArBIeGmyKA78M_PVogsTk2oRrhBCwmjZG2P_OJGQ1EsCfXLF9yrBh_Ks/joyconpiece/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -943,13 +943,16 @@
 		"styles" : [ 			{
 				"name" : "Minimal",
 				"default" : 				{
-					"elementcolor" : [ 0.694117647058824, 0.694117647058824, 0.694117647058824, 1.0 ],
 					"bgcolor" : [ 0.999999, 0.999974, 0.999991, 1.0 ],
-					"fontsize" : [ 10.0 ],
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"fontname" : [ "Futura Medium" ],
+					"elementcolor" : [ 0.694117647058824, 0.694117647058824, 0.694117647058824, 1.0 ],
+					"fontface" : [ 0 ],
 					"clearcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 					"selectioncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"editing_bgcolor" : [ 0.956862745098039, 0.956862745098039, 0.956862745098039, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"fontname" : [ "Futura Medium" ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
@@ -960,10 +963,7 @@
 						"autogradient" : 0.0
 					}
 ,
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"editing_bgcolor" : [ 0.956862745098039, 0.956862745098039, 0.956862745098039, 1.0 ],
-					"fontface" : [ 0 ],
-					"accentcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"fontsize" : [ 10.0 ]
 				}
 ,
 				"parentstyle" : "",

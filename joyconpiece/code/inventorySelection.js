@@ -122,7 +122,7 @@ var last_y = 0;
 var rad = 0.99; 
 var offColor = [0,0,0,0.1];
 var selectionMod = 0;
-var modThresh = 0.05;
+var modThresh = 0.01;
 
 var innerRad = 0.4;
 var interiorColor = [0.9, 0.9, 0,0];
@@ -252,8 +252,9 @@ function select(select){
 	}
 	
 function joystick(xPos, yPos){
-	var polar = cartopol(xPos,yPos)
+	var polar = cartopol(-xPos,yPos);
 	var mod = polar[0];
+	mod = mod*mod;
 	var phase = polar[1];
 	
 	if (mod > modThresh){
