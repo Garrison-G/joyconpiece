@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 40.0, 234.0, 1290.0, 710.0 ],
+		"rect" : [ 40.0, 240.0, 1289.0, 704.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -38,6 +38,57 @@
 		"style" : "Minimal",
 		"subpatcher_template" : "minimal",
 		"boxes" : [ 			{
+				"box" : 				{
+					"attr" : "quantizationDivisions",
+					"displaymode" : 1,
+					"id" : "obj-19",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 779.0, 346.0, 150.0, 21.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-18",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 519.0, 87.0, 50.0, 21.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-15",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 457.0, 79.0, 50.0, 21.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 454.0, 129.0, 43.0, 21.0 ],
+					"text" : "pack f f"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"format" : 6,
 					"id" : "obj-33",
@@ -568,7 +619,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "InteriorColor", 0.9, 0.9, 0, 0 ], [ "AccentColor", 0.9, 0.9, 0, 0.5 ], [ "OffColor", 0, 0, 0, 0.1 ], [ "Spacer", 0 ], [ "InnerRadius", 0.4 ], [ "OutlineColor", 0, 0, 0, 0.5 ], [ "modThresh", 0.01 ], [ "LineWeight", 1 ], [ "Slices", 8 ] ],
+					"embedstate" : [ [ "InteriorColor", 0.9, 0.9, 0, 0 ], [ "AccentColor", 0.9, 0.9, 0, 0.5 ], [ "quantizationDivisions", 0 ], [ "OffColor", 0, 0, 0, 0.1 ], [ "Spacer", 0 ], [ "InnerRadius", 0.4 ], [ "OutlineColor", 0, 0, 0, 0.5 ], [ "modThresh", 0.01 ], [ "LineWeight", 1 ], [ "Slices", 8 ] ],
 					"filename" : "inventorySelection.js",
 					"id" : "obj-2",
 					"maxclass" : "jsui",
@@ -720,6 +771,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
@@ -734,8 +792,29 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 1 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-19", 0 ]
 				}
 
 			}
