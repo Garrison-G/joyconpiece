@@ -111,6 +111,18 @@ function setattr_modThresh(){
      refresh();
 }
 
+declareattribute("quantizationDivisions","getattr_qDiv", "setattr_qDiv", 1);
+
+
+function getattr_qDiv(){
+     return qDiv;
+}
+
+function setattr_qDiv(){
+     qDiv = arguments[0];
+     refresh();
+}
+
 outlets = 1;
 //Variables
 var val = 0;
@@ -132,6 +144,8 @@ var spacer = 0;
 var slices = 8;
 var accentColor = [0.9, 0.9, 0,0.5];
 var label = "";
+var qDiv = 0;
+var quantize = 0;
 
 
 //mgraphic init
@@ -183,7 +197,7 @@ function paint(){
 		set_source_rgba(offColor[0],offColor[1],offColor[2], offColor[3]);
 		}
 		else{
-			set_source_rgba(onColor[0],onColor[1],onColor[2], onColor[3]*0.25);
+			set_source_rgba((onColor[0]*0.5+offColor[0]*0.5),(onColor[1]*0.5+offColor[1]*0.5),(onColor[2]*0.5+offColor[2]*0.5), (onColor[3]*0.5+offColor[3]*0.5));
 			}
 
 		fill();
@@ -259,14 +273,27 @@ function joystick(xPos, yPos){
 	
 	if (mod > modThresh){
 	
-	var around = (phase/(Math.PI*2)+1.25)%1;
+		var around = (phase/(Math.PI*2)+1.25)%1;
 	
-	var selection = Math.floor(around*slices)
+		var selection = Math.floor(around*slices)
 	
-	select(selection);
+		select(selection);
+		
+		if (qDiv > 0){
+			mod *= qDiv;
+			mod = Math.round(mod, 1/qDiv);
+			quantize = 1;
+			mod /= qDiv;
+			post("mod quant ", mod, "\n");
+				}
+		else 	quantize = 0;
 	
-	selectionMod = Math.clamp(mod,0,1);
-	}
+	
+	
+		selectionMod = Math.clamp(mod,0,1);
+		}
+		
+
 	
 	else {
 		select (-1);
